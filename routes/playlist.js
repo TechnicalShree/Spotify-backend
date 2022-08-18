@@ -24,7 +24,7 @@ router.post("/", auth, async (req, res) => {
   res.status(201).send({ data: playlist });
 });
 
-// edit playlist
+// update playlist
 
 router.put("/edit/:id", [validObjectId, auth], async (req, res) => {
   const schema = Joi.object({
@@ -55,12 +55,12 @@ router.put("/edit/:id", [validObjectId, auth], async (req, res) => {
   playlist.img = req.body.img;
   await playlist.save();
 
-  res.status(200).send({ data: schema, message: "Updated succcessfully." });
+  res.status(200).send({ data: playlist, message: "Updated succcessfully." });
 });
 
 // add song to playlist
 
-router.post("/add-song", auth, async (req, res) => {
+router.put("/add-song", auth, async (req, res) => {
   const schema = Joi.object({
     playlistId: Joi.string().required(),
     songId: Joi.string().required(),
@@ -84,6 +84,8 @@ router.post("/add-song", auth, async (req, res) => {
       .status(200)
       .send({ data: playlist, message: "You have already added that song." });
   }
+
+  await playlist.save();
 
   res.status(200).send({ data: playlist, message: "Successfully added song." });
 });
@@ -110,6 +112,9 @@ router.put("/remove-song", auth, async (req, res) => {
   }
 
   const index = playlist.songs.indexOf(req.body.songId);
+  if (index === -1) {
+    return res.status(400).send({ message: "Song not found in playlist" });
+  }
 
   playlist.songs.splice(index, 1);
   await playlist.save();
@@ -122,6 +127,9 @@ router.put("/remove-song", auth, async (req, res) => {
 router.get("/favourite", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
   const playlists = await Playlist.findById({ _id: user.playlists });
+  if (!playlists) {
+    return res.status(400).send({ message: "User don't have playlist Yet." });
+  }
   res.status(200).send({ data: playlists });
 });
 
@@ -160,6 +168,9 @@ router.get("/", auth, async (req, res) => {
 router.delete("/:id", [validObjectId, auth], async (req, res) => {
   const user = await User.findById(req.user._id);
   const playlist = await Playlist.findById(req.params.id);
+  if (!playlist) {
+    return res.status(400).send({ message: "Playlist not found." });
+  }
   if (!user._id.equals(playlist.user)) {
     return res
       .status(403)

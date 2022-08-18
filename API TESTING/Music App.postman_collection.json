@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "f07c74c7-e586-4007-964a-80ae774b2f5c",
+		"name": "Music App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17309055"
+	},
+	"item": [
+		{
+			"name": "User Routes",
+			"item": [
+				{
+					"name": "Get all users (admin)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"accept": true,
+							"accept-encoding": true,
+							"connection": true,
+							"host": true,
+							"content-type": true,
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDY2MTA3MX0._9HusF8z_t4i24Vd0Y1PtBmF6Vh9ZHLP98WWg16wN4w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by Id (auth)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true,
+							"host": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDY2MTA3MX0._9HusF8z_t4i24Vd0Y1PtBmF6Vh9ZHLP98WWg16wN4w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fb73e9304f7bfe1267b870"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by Id (auth)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiOGJkNDFkNDkxNzlkYjVhNmMxMmMiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjA3MTU1NzF9.y6PV0acrxyf2kM8bOy688JAxk-YNpHFXBDj1wvqrPKc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"krushna Sadashiv Raut\",\r\n    \"year\": \"1996\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fb8bd41d49179db5a6c12c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by Id (admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDY2MTA3MX0._9HusF8z_t4i24Vd0Y1PtBmF6Vh9ZHLP98WWg16wN4w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fb8bd91d49179db5a6c12f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Song Routes",
+			"item": [
+				{
+					"name": "Create Song (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDcxOTI0Mn0.E3kva-DMIzBdjlzzmsxnrwPxatpx8bLWIVaD3ZfNmRk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cheap Thrills\",\r\n    \"artis\": \"Sia\",\r\n    \"song\": \"https://drive.google.com/file/d/1ed-AlCvevfv6b-KE1fMeUI7HRHkqT36z/view?usp=sharing\",\r\n    \"img\": \"https://upload.wikimedia.org/wikipedia/en/f/fc/Sia_Cheap_Thrills.png\",\r\n    \"duration\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/songs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Song (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDcxOTI0Mn0.E3kva-DMIzBdjlzzmsxnrwPxatpx8bLWIVaD3ZfNmRk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"duration\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/songs/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fc99a553f9442d58b4fbf9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Song (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDcxOTI0Mn0.E3kva-DMIzBdjlzzmsxnrwPxatpx8bLWIVaD3ZfNmRk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/songs/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs",
+								":id"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fc9b527c28ba358932347a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Songs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/songs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Liked Songs (auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDcyMjMzOX0.MU1gZpI7toGvq0nqSYiKK-WKZhpyq03U9x4N6xjzX5U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/songs/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like a Song (auth)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDcyMjMzOX0.MU1gZpI7toGvq0nqSYiKK-WKZhpyq03U9x4N6xjzX5U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/songs/like/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"songs",
+								"like",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fc9b527c28ba358932347a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlist Routes",
+			"item": [
+				{
+					"name": "Create Playlist (auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"80s songs Original\",\r\n    \"user\": \"62fb73e9304f7bfe1267b870\",\r\n    \"desc\": \"Playlist is created by a Admin.\",\r\n    \"songs\":[],\r\n    \"img\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/playlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Playlist (auth)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"80's Songs by Admin\",\r\n    \"desc\": \"Updated description...\",\r\n    \"img\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/edit/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								"edit",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fdbe20b60fedb33af1565e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add song to playlist (auth)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playlistId\": \"62fdbe20b60fedb33af1565e\",\r\n    \"songId\": \"62fc9e6c66d0ef27c399364f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/add-song",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								"add-song"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove songs from playlist (auth)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playlistId\": \"62fdbe20b60fedb33af1565e\",\r\n    \"songId\": \"62fc9e6c66d0ef27c399364f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/remove-song",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								"remove-song"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User playlist (auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/playlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get play list by Id (auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fdbe20b60fedb33af1565e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get random playlists (auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/random",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all playlists (auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/playlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete playlist (auth)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDczODU0MH0.rOV58pP2uhRnZYiUPVH1lDeRvuyb5AMCjVJ3VxHASJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/playlists/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62fdc66c61365092e9207a29"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"krushnRaut\",\r\n    \"email\": \"shree1@gmail.com\",\r\n    \"password\": \"123Asdqwe@1\",\r\n    \"month\": \"September\",\r\n    \"year\": \"2022\",\r\n    \"date\": \"5\",\r\n    \"gender\": \"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZiNzNlOTMwNGY3YmZlMTI2N2I4NzAiLCJuYW1lIjoia3J1c2huUmF1dCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDY1MjkyOSwiZXhwIjoxNjYxMjU3NzI5fQ.UW_UsuMnWNh9KiZqmCM-JlguZWXk3kTVeYhXStG3FaE",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"shree123@gmail.com\",\r\n    \"password\": \"123Asdqwe@1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
