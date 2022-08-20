@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
   if (user) {
     return res
       .status(403)
-      .send({ message: "User with the given id is exists!" });
+      .send({ message: "User with the given email id is exists!" });
   }
 
   const salt = await bcrypt.genSalt(Number(process.env.SALT));
